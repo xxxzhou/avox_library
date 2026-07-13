@@ -1,0 +1,2 @@
+# Debug symbol files — never commit (can exceed GitHub size limits)
+*.pdb
