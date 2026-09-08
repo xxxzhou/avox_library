@@ -2,3 +2,7 @@
 *.a filter=lfs diff=lfs merge=lfs -text
 *.onnx filter=lfs diff=lfs merge=lfs -text
 *.dll filter=lfs diff=lfs merge=lfs -text
+
+# build下webrtc库直存git(无符号版均<100MB), 不占LFS额度
+build/**/*.a -filter -diff -merge -text
+build/**/*.lib -filter -diff -merge -text

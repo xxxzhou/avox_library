@@ -1,2 +1,7 @@
 # Debug symbol files — never commit (can exceed GitHub size limits)
 *.pdb
+# 带符号版体积过大(含DWARF/CodeView调试信息), 不进版本管理, 本机保留
+# 重编: avox仓库 script/webrtc/ 下各平台脚本
+build/*/release/libwebrtc.a
+build/windows/*/webrtc.lib
+build/windows/debug/
