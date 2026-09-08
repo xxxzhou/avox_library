@@ -5,3 +5,6 @@
 build/*/release/libwebrtc.a
 build/windows/*/webrtc.lib
 build/windows/debug/
+# libtorrent 预编译库暂不入库(495MB, LFS额度紧张)
+3rdparty/library/android/libtorrent/
+3rdparty/library/windows/libtorrent/
