@@ -1,0 +1,13 @@
+prefix=D:/Work/github/avox/3rdparty/library/ass/windows
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: harfbuzz
+Description: HarfBuzz text shaping library
+Version: 10.2.0
+
+Libs: -L${libdir} -lharfbuzz
+Libs.private: -lm 
+Requires.private: 
+Cflags: -I${includedir}/harfbuzz
