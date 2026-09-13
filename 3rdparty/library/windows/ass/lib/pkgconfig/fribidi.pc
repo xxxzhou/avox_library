@@ -1,9 +1,0 @@
-prefix=D:/Work/github/avox/3rdparty/library/ass/windows
-includedir=${prefix}/include
-libdir=${prefix}/lib
-
-Name: GNU FriBidi
-Description: Unicode Bidirectional Algorithm Library
-Version: 1.0.16
-Libs: -L${libdir} -lfribidi
-Cflags: -I${includedir}/fribidi

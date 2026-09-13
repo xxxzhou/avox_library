@@ -23,12 +23,12 @@ avc_library/
 - 重编用 avox 仓库 [script/webrtc/](../avox/script/webrtc) 下各平台脚本；Windows Debug 库（build/windows/debug/）同样不入库，需本机自编 `.\webrtc_build_windows.ps1 debug`。
 
 ## 3rdparty 预编译库说明
-- **windows/ass**: ASS 字幕栈四库(libass 0.17.3 / fribidi 1.0.16 / harfbuzz 10.2.0 / freetype 2.13.3,共 4.3MB:
-  ass-9.dll + fribidi-0.dll + harfbuzz.dll + freetype.dll + .lib + include)。avox_ass 插件依赖,
-  用于 ASS/SSA 特效字幕完整渲染。重编: avox 仓 `python script/ass/build_windows.py`(fribidi/libass 走 meson,
-  其余 CMake; pkg-config 用 pkgconf 源码自编)。许可: libass ISC / harfbuzz MIT / freetype FTL /
-  fribidi LGPL-2.1+(故出 dll 动态链接, DEP_DLLS 随插件自包含分发)。
-
+- **windows/ass**: ASS 字幕栈(libass 0.17.3 + fribidi 1.0.16, 2.1MB:
+  ass-9.dll 内含 freetype 2.13.3/harfbuzz 10.2.0 静态链 + fribidi-0.dll 动态 + ass.lib + include/ass)。
+  avox_ass 插件依赖, 用于 ASS/SSA 特效字幕完整渲染。freetype/harfbuzz 静态链入是为避免与
+  avox 核心 avox_freetype 的 FreeType 双副本; fribidi LGPL 故保持动态(DEP_DLLS 随插件分发)。
+  重编: avox 仓 `python script/ass/build_windows.py`(fribidi/libass 走 meson, 其余 CMake;
+  CMP0091=NEW 修 /MT; pkg-config 用 pkgconf 源码自编进脚本 _cache, 不入库)。
 - **windows/onnxruntime**: `onnxruntime-win-x64-MT-Release-1.23.2`，来自 [csukuangfj/onnxruntime-libs](https://github.com/csukuangfj/onnxruntime-libs/releases/tag/v1.23.2)（静态 CRT /MT 版）。曾以 `onnxruntime-win-x64-1.23.2`（形似微软官方命名）入库，内容即此 MT 构建，现改名对齐 FindONNX.cmake 优先目录与 avox 下载脚本的解压目录名。微软官方 MD 版在 avox 的 plugins/ 下 LoadLibrary 时 DllMain 初始化失败 (err=1114)，勿入库。
 - **android/onnxruntime**: 已移除（静态 .a 解压后 1.3GB，占 LFS 存储 73%）。需要编译 Android 时在 avox 仓库执行 `python script/onnx/down_onnxruntime_android.py`（上游 zip 仅 180MB，解压到 avox/3rdparty/library/android/onnxruntime）。
 - **windows/opencv**: 精简为 release-only —— 已删 debug 库（opencv_world4130d 127MB）、java/python 绑定、重复的顶层 ffmpeg dll。avox 的 FindOpenCV.cmake 找不到 debug 库时自动全配置链 release 库，Debug 构建不受影响。
