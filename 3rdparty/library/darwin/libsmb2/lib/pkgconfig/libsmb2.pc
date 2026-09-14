@@ -1,0 +1,14 @@
+# libsmb2 pkg-config file
+
+prefix=/Volumes/pssd/work/github/avc_library/3rdparty/library/darwin/libsmb2
+exec_prefix=/Volumes/pssd/work/github/avc_library/3rdparty/library/darwin/libsmb2
+libdir=/Volumes/pssd/work/github/avc_library/3rdparty/library/darwin/libsmb2/lib
+includedir=/Volumes/pssd/work/github/avc_library/3rdparty/library/darwin/libsmb2/include
+
+Name: libsmb2
+Description: libsmb2 is a client library for accessing SMB shares over a network.
+Version: 6.1.0
+Requires:
+Conflicts:
+Libs: -L${libdir} -lsmb2
+Cflags: -I${includedir}
