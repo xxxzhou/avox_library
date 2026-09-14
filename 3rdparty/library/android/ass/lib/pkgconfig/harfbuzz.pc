@@ -1,0 +1,13 @@
+prefix=Q:/Work/github/avc_library/3rdparty/library/android/ass
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: harfbuzz
+Description: HarfBuzz text shaping library
+Version: 10.2.0
+
+Libs: -L${libdir} -lharfbuzz
+Libs.private: -lm -pthread
+Requires.private: 
+Cflags: -I${includedir}/harfbuzz

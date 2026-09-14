@@ -1,0 +1,14 @@
+# libsmb2 pkg-config file
+
+prefix=Q:/Work/github/avc_library/3rdparty/library/android/libsmb2/arm64-v8a
+exec_prefix=Q:/Work/github/avc_library/3rdparty/library/android/libsmb2/arm64-v8a
+libdir=Q:/Work/github/avc_library/3rdparty/library/android/libsmb2/arm64-v8a/lib
+includedir=Q:/Work/github/avc_library/3rdparty/library/android/libsmb2/arm64-v8a/include
+
+Name: libsmb2
+Description: libsmb2 is a client library for accessing SMB shares over a network.
+Version: 6.1.0
+Requires:
+Conflicts:
+Libs: -L${libdir} -lsmb2
+Cflags: -I${includedir}
