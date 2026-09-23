@@ -5,7 +5,7 @@
 ## 目录结构
 
 ```
-avc_library/
+avox_library/
 ├── build/                  # WebRTC 构建产物 (release 无符号库, 直存 git 不走 LFS)
 │   ├── android/            # Android libwebrtc_nosym.a
 │   ├── darwin/             # macOS libwebrtc_nosym.a
@@ -35,4 +35,4 @@ avc_library/
 
 ## AI 模型
 
-AI 模型存放在独立仓库：[avc_model](https://github.com/xxxzhou/avc_model)
+AI 模型存放在独立仓库：[avox_model](https://github.com/xxxzhou/avox_model)
