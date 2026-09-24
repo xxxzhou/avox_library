@@ -1,9 +1,6 @@
-*.lib filter=lfs diff=lfs merge=lfs -text
-*.a filter=lfs diff=lfs merge=lfs -text
-*.onnx filter=lfs diff=lfs merge=lfs -text
-*.dll filter=lfs diff=lfs merge=lfs -text
-
-# build下webrtc库直存git(无符号版均<100MB), 不占LFS额度
-build/**/*.a -filter -diff -merge -text
-build/**/*.lib -filter -diff -merge -text
-*.dylib filter=lfs diff=lfs merge=lfs -text
+# 二进制产物直存 git (09-24 起 去 LFS: 现存产物全部 <100MB, 免 LFS 配额)
+*.lib -text
+*.a -text
+*.onnx -text
+*.dll -text
+*.dylib -text
