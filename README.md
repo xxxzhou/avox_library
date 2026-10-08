@@ -1,6 +1,6 @@
-# AVC Library
+# avox Library
 
-为 [avplay](https://github.com/xxxzhou/avplay) 项目存放大型二进制文件（dll、lib 等）。
+为 [avox](https://github.com/xxxzhou/avox) 项目存放大型二进制文件（dll、lib 等）。
 
 ## 目录结构
 
